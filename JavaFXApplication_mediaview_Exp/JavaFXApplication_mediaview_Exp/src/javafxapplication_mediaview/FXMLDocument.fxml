@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+
+<AnchorPane id="AnchorPane" prefHeight="762.0" prefWidth="1500.0" styleClass="background" stylesheets="@gui.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication_mediaview.FXMLDocumentController">
+    <children>
+      <MediaView fx:id="mv" fitHeight="650" fitWidth=".0" layoutX="1.0" layoutY="25.0">
+         <viewport>
+            <Rectangle2D />
+         </viewport></MediaView>
+      <MenuBar minWidth="1500.0" prefHeight="25.0" prefWidth="815.0">
+        <menus>
+         <Menu mnemonicParsing="false" text="Media">
+         
+   <items>
+              <MenuItem fx:id="of" mnemonicParsing="false" onAction="#handleButtonAction" text="Open File" />
+            </items>
+            <items>
+              <MenuItem fx:id="ofm" mnemonicParsing="false" onAction="#handleButtonAction" text="Open Multiple File" />
+            </items>
+            <items>
+              <MenuItem fx:id="plist" mnemonicParsing="false" onAction="#handleButtonAction" text="Playlist" />
+            </items>
+             <items>
+              <MenuItem fx:id="ns" mnemonicParsing="false" onAction="#handleButtonAction" text="Network Stream" />
+            </items>
+             <items>
+              <MenuItem fx:id="q" mnemonicParsing="false" onAction="#handleButtonAction" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Playback">
+            <items>
+              <MenuItem fx:id="p" mnemonicParsing="false" text="Play" />
+            </items>
+             <items>
+              <MenuItem fx:id="st" mnemonicParsing="false" text="Stop" />
+            </items>
+             <items>
+              <MenuItem fx:id="prev" mnemonicParsing="false" text="Previous" />
+            </items>
+             <items>
+              <MenuItem fx:id="nx" mnemonicParsing="false" text="Next" />
+            </items>
+             <items>
+              <MenuItem fx:id="rec" mnemonicParsing="false" text="Record" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Audio">
+            <items>
+              <MenuItem fx:id="iv" mnemonicParsing="false" text="Increase Volume" />
+            </items>
+             <items>
+              <MenuItem fx:id="dv" mnemonicParsing="false" text="Decrease Volume" />
+            </items>
+             <items>
+              <MenuItem fx:id="mut" mnemonicParsing="false" text="Mute" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="View">
+              <items>
+                  <MenuItem fx:id="fs" mnemonicParsing="false" text="Full Screen " />
+              </items>
+              <items>
+                  <MenuItem fx:id="ms" mnemonicParsing="false" text="Minimed View" />
+              </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+              <items>
+                 <MenuItem fx:id="he" mnemonicParsing="false" text="Help" />    
+              </items>
+              <items>
+                 <MenuItem fx:id="ab" mnemonicParsing="false" text="About" />
+              </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Slider fx:id="vol" layoutX="619.0" layoutY="716.0" prefHeight="14.0" prefWidth="58.0" />
+<!--      <Button fx:id="mute" layoutX="550.0" layoutY="445.0" onAction="#handleButtonAction" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0"  />-->
+      <Separator layoutX="599.0" layoutY="711.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="20.0" />
+      <Label fx:id="vol_label" layoutX="699.0" layoutY="705.0" prefHeight="36.0" prefWidth="51.0">
+         <tooltip>
+            <Tooltip fx:id="volTool" text="Volume" />
+         </tooltip></Label>
+      <Button fx:id="playBut" layoutX="198.0" layoutY="685.0" mnemonicParsing="false" onAction="#handleButtonAction" text="&gt;">
+         <tooltip>
+            <Tooltip fx:id="playTool" text="Play" />
+         </tooltip></Button>
+      <Slider fx:id="timeShift" layoutX="13.0" layoutY="716.0" prefHeight="14.0" prefWidth="586.0" />
+      <Button fx:id="pauseBut" layoutX="240.0" layoutY="685.0" mnemonicParsing="false" onAction="#handleButtonAction" text="||">
+         <tooltip>
+            <Tooltip fx:id="pauseTool" text="Pause" />
+         </tooltip></Button>
+      <Button fx:id="fastBut" layoutX="364.0" layoutY="684.0" mnemonicParsing="false" onAction="#handleButtonAction" text="&gt;&gt;&gt;">
+         <tooltip>
+            <Tooltip fx:id="forTool" text="Forward" />
+         </tooltip></Button>
+      <Label fx:id="totalTime" layoutX="479.0" layoutY="679.0" prefHeight="36.0" prefWidth="113.0" />
+      <Label fx:id="time" layoutX="290.0" layoutY="682.0" prefHeight="36.0" prefWidth="94.0" />
+      <Button fx:id="backBut" layoutX="24.0" layoutY="688.0" mnemonicParsing="false" onAction="#handleButtonAction" text="&lt;&lt;&lt;" />
+      <Button fx:id="reBut" layoutX="113.0" layoutY="688.0" mnemonicParsing="false" text="R" onAction="#handleButtonAction" />
+<!--      <Button fx:id="playBut" layoutX="14.0" layoutY="423.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="20.0" style="-fx-graphic: url('play_but.jpeg')">
+         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="http://icons.iconarchive.com/icons/mirella-gabriele/fantasy-mediaeval/128/Poison-red-icon.png" />
+          </image>
+        </ImageView>
+      </Button>        -->
+<!--      <Button fx:id="ResBut" layoutX="54.0" layoutY="423.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="20.0" text="Button" />
+      <Button fx:id="StopBut" layoutX="94.0" layoutY="423.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="24.0" text="Button" />-->
+   </children>
+</AnchorPane>
